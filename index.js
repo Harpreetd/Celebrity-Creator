@@ -27,3 +27,16 @@ let celebrityArray = [
 ];
 console.log(celebrityArray);
 
+let actorsBtn = document.getElementById("actors");
+let singersBtn = document.getElementById("singers");
+let comediansBtn = document.getElementById("comedians");
+
+function filteredCelebrityInfo(profession) {
+  return celebrityArray.filter(
+    (celebrity) => celebrity.profession == profession
+  );
+}
+function showCelebrity() {
+  console.log(filteredCelebrityInfo("actor"));
+}
+actorsBtn.onclick = showCelebrity;
