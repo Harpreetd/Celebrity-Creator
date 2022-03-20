@@ -27,16 +27,23 @@ let celebrityArray = [
 ];
 console.log(celebrityArray);
 
-let actorsBtn = document.getElementById("actors");
-let singersBtn = document.getElementById("singers");
-let comediansBtn = document.getElementById("comedians");
-
+let celebrities;
 function filteredCelebrityInfo(profession) {
-  return celebrityArray.filter(
-    (celebrity) => celebrity.profession == profession
-  );
+  celebrities = celebrityArray.filter(function (celebrity) {
+    return celebrity.profession == profession;
+  });
+  console.log(celebrities);
 }
-function showCelebrity() {
-  console.log(filteredCelebrityInfo("actor"));
+function showCelebrity(celebrities) {
+  let info = document.createElement("h1");
+  document.body.append(info);
 }
-actorsBtn.onclick = showCelebrity;
+document.querySelector("#actors").addEventListener("click", function () {
+  filteredCelebrityInfo("actor");
+});
+document.querySelector("#singers").addEventListener("click", function () {
+  filteredCelebrityInfo("singer");
+});
+document.querySelector("#comedians").addEventListener("click", function () {
+  filteredCelebrityInfo("comedian");
+});
