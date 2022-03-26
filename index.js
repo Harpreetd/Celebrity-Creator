@@ -1,10 +1,40 @@
 //Oppgave 1
 let celebrityArray = [
-  { name: "Angelina Jolie", age: 46, profession: "actor", gender: "female" },
-  { name: "Jude Law", age: 49, profession: "actor", gender: "male" },
-  { name: "the Weeknd", age: 32, profession: "singer", gender: "male" },
-  { name: "Ariana Grande", age: 28, profession: "singer", gender: "female" },
-  { name: "Kewin Hart", age: 42, profession: "comedian", gender: "male" },
+  {
+    name: "Angelina Jolie",
+    age: 46,
+    profession: "actor",
+    gender: "female",
+    img: "./assets/angelina-jolie.jpg",
+  },
+  {
+    name: "Jude Law",
+    age: 49,
+    profession: "actor",
+    gender: "male",
+    img: "./assets/jude-law.jpg",
+  },
+  {
+    name: "the Weeknd",
+    age: 32,
+    profession: "singer",
+    gender: "male",
+    img: "./assets/the-weeknd.jpg",
+  },
+  {
+    name: "Ariana Grande",
+    age: 28,
+    profession: "singer",
+    gender: "female",
+    img: "./assets/ariana_grande.jpg",
+  },
+  {
+    name: "Kewin Hart",
+    age: 42,
+    profession: "comedian",
+    gender: "male",
+    img: "./assets/kewin-hart.jpg",
+  },
 ];
 console.log(celebrityArray);
 document.querySelector("#actors").addEventListener("click", function () {
@@ -30,6 +60,6 @@ let celebList = document.getElementById("celeb-list");
 function showCelebrity(celebrities) {
   celebList.innerHTML = "";
   for (let i = 0; i < celebrities.length; i++) {
-    celebList.innerHTML += `<div>${celebrities[i].name}</div>`;
+    celebList.innerHTML += `<div class="card"><img src="${celebrities[i].img}"><h2>${celebrities[i].name}</h2><h3>${celebrities[i].profession}</h3></div>`;
   }
 }
