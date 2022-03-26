@@ -84,13 +84,27 @@ function createCelebrity() {
   let celebAge = document.getElementById("celeb-age").value;
   let celebGender = document.getElementById("celeb-gender").value;
   let celebProfession = document.getElementById("celeb-prof").value;
+  console.log(celebProfession);
   let celebImg = "./assets/leonardo.jpg";
-  celebrityArray.push({
-    name: celebName,
-    age: celebAge,
-    profession: celebProfession,
-    gender: celebGender,
-    img: celebImg,
-  });
-  filteredCelebrityInfo(celebProfession);
+  if (celebName == "" || celebGender == "") {
+    alert("Type in Input fields");
+  } else if (isNaN(celebAge) || celebAge == "") {
+    alert("Type in Age in numbers");
+  } else if (
+    celebProfession == "actor" ||
+    celebProfession == "singer" ||
+    celebProfession == "comedian"
+  ) {
+    celebrityArray.push({
+      name: celebName,
+      age: celebAge,
+      profession: celebProfession,
+      gender: celebGender,
+      img: celebImg,
+    });
+    filteredCelebrityInfo(celebProfession);
+    
+  } else {
+    alert("type one of these: actor / singer / comedian");
+  }
 }
