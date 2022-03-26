@@ -60,6 +60,17 @@ let celebList = document.getElementById("celeb-list");
 function showCelebrity(celebrities) {
   celebList.innerHTML = "";
   for (let i = 0; i < celebrities.length; i++) {
-    celebList.innerHTML += `<div class="card"><img src="${celebrities[i].img}"><h2>${celebrities[i].name}</h2><h3>${celebrities[i].profession}</h3></div>`;
+    // oppgave 3
+    celebList.innerHTML += `<div class="card"><img src="${
+      celebrities[i].img
+    }"><h2>${celebrities[i].name.toUpperCase()}</h2><h3>${celebrities[
+      i
+    ].profession.toUpperCase()}</h3>
+    <button onclick="deleteCeleb(${i})">Delete</button></div>`;
   }
+}
+//function to delete celebrity
+function deleteCeleb(i) {
+  celebrities.splice(i, 1);
+  showCelebrity(celebrities);
 }
