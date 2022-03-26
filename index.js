@@ -52,6 +52,7 @@ function filteredCelebrityInfo(category) {
   celebrities = celebrityArray.filter(function (celebrity) {
     return celebrity.profession == category;
   });
+
   console.log(celebrities);
   showCelebrity(celebrities);
 }
@@ -69,8 +70,27 @@ function showCelebrity(celebrities) {
     <button onclick="deleteCeleb(${i})">Delete</button></div>`;
   }
 }
-//function to delete celebrity
+//Oppgave 4.a function to delete celebrity
 function deleteCeleb(i) {
   celebrities.splice(i, 1);
   showCelebrity(celebrities);
+}
+// Oppgave 4.b function to craete new celeb
+
+let createCelebBtn = document.getElementById("create-celeb");
+createCelebBtn.onclick = createCelebrity;
+function createCelebrity() {
+  let celebName = document.getElementById("celeb-name").value;
+  let celebAge = document.getElementById("celeb-age").value;
+  let celebGender = document.getElementById("celeb-gender").value;
+  let celebProfession = document.getElementById("celeb-prof").value;
+  let celebImg = "./assets/leonardo.jpg";
+  celebrityArray.push({
+    name: celebName,
+    age: celebAge,
+    profession: celebProfession,
+    gender: celebGender,
+    img: celebImg,
+  });
+  filteredCelebrityInfo(celebProfession);
 }
