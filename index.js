@@ -86,6 +86,7 @@ function createCelebrity() {
   let celebProfession = document.getElementById("celeb-prof").value;
   console.log(celebProfession);
   let celebImg = "./assets/leonardo.jpg";
+  // oppgave 5 Error handling in input fields
   if (celebName == "" || celebGender == "") {
     alert("Type in Input fields");
   } else if (isNaN(celebAge) || celebAge == "") {
@@ -103,7 +104,6 @@ function createCelebrity() {
       img: celebImg,
     });
     filteredCelebrityInfo(celebProfession);
-    
   } else {
     alert("type one of these: actor / singer / comedian");
   }
